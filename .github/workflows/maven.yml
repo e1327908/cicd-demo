@@ -73,6 +73,6 @@ jobs:
       - name: Create SARIF file
         run: echo "{}" > snyk.sarif  # Create an empty SARIF file, replace with the actual creation command if needed
       - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: snyk.sarif
