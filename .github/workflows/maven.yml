@@ -68,8 +68,7 @@ jobs:
         #env:
           #SNYK_TOKEN: ${{ secrets.SNYK_API_TOKEN }}
       - name: Authenticate Snyk
-        run: |
-          snyk auth ${{ secrets.SNYK_API_TOKEN }}
+         run: snyk auth ${{ secrets.SNYK_API_TOKEN }}
         with:
           args: --sarif-file-output=snyk.sarif
       - name: Upload result to GitHub Code Scanning
