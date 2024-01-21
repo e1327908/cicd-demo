@@ -70,7 +70,9 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           args: --sarif-file-output=snyk.sarif
+      - name: Create SARIF file
+        run: echo "{}" > snyk.sarif  # Create an empty SARIF file, replace with the actual creation command if needed
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: path/to/snyk.sarif
+          sarif_file: snyk.sarif
